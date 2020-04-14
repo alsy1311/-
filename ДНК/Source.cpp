@@ -31,6 +31,7 @@ void parallel(size_t N, std::string findStr ) {
 		myset.insert(results[i]);
 		
 	}
+
 	for (std::set<int>::iterator it = myset.begin(); it != myset.end(); ++it)
 	{
 		std::cout << *it << ' ';
