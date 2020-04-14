@@ -20,7 +20,7 @@ void parallel(size_t N, std::string findStr ) {
 	const std::size_t hardware_threads = std::thread::hardware_concurrency();
 	const std::size_t num_threads = hardware_threads != 0 ? hardware_threads : 2;
 	std::size_t block_size = length / num_threads + 1;
-	std::vector < int > results(num_threads + 1);
+	std::vector < int > results(num_threads );
 	std::vector < std::thread > threads;
 	for (std::size_t i = 0; i < num_threads ; ++i) {
 		threads.push_back(std::thread(find, i * block_size, std::ref(results[i]), findStr));
